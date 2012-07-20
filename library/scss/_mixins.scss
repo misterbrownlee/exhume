@@ -1,10 +1,10 @@
 /******************************************************************
-Site Name: 
-Author: 
+Site Name:
+Author:
 
 Stylesheet: Mixins & Constants Stylesheet
 
-This is where you can take advantage of Sass' great features: 
+This is where you can take advantage of Sass' great features:
 Mixins & Constants. I won't go in-depth on how they work exactly,
 there are a few articles below that will help do that. What I will
 tell you is that this will help speed up simple changes like
@@ -12,7 +12,7 @@ changing a color or adding CSS3 techniques like box shadow and
 border-radius.
 
 A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more. 
+remember less is more.
 
 ******************************************************************/
 
@@ -20,8 +20,8 @@ remember less is more.
 CLEARFIXIN'
 *********************/
 
-/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */ 
-.clearfix { 
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix {
 	&:before,
 	&:after {
 		content: "";
@@ -30,7 +30,7 @@ CLEARFIXIN'
 	&:after {
 		clear: both;
 	}
-	zoom: 1; 
+	zoom: 1;
 }
 
 /*********************
@@ -60,17 +60,23 @@ $white:             #fff;
 
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
-	
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+
 /*********************
 TYPOGRAPHY
 *********************/
 
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif; 
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif; 
+$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
 
 /* 	To embed your own fonts, use this syntax
-	and place your fonts inside the 
+	and place your fonts inside the
 	library/fonts folder. For more information
 	on embedding fonts, go to:
 	http://www.fontsquirrel.com/
@@ -89,8 +95,8 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 	}
 */
 
-/* 
-use the best ampersand 
+/*
+use the best ampersand
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
 span.amp {
@@ -105,41 +111,41 @@ span.amp {
 
 
 /* alerts & notices */
-.alert { 
-	margin: 10px; 
-	padding: 5px 18px; 
-	border: 1px solid; 
+.alert {
+	margin: 10px;
+	padding: 5px 18px;
+	border: 1px solid;
 }
 
-.help { 
-	border-color: darken($alert-yellow, 5%); 
-	background: $alert-yellow; 
+.help {
+	border-color: darken($alert-yellow, 5%);
+	background: $alert-yellow;
 }
 
-.info { 
-	border-color: darken($alert-blue, 5%); 
-	background: $alert-blue; 
+.info {
+	border-color: darken($alert-blue, 5%);
+	background: $alert-blue;
 }
 
-.error { 
-	border-color: darken($alert-red, 5%); 
-	background: $alert-red; 
+.error {
+	border-color: darken($alert-red, 5%);
+	background: $alert-red;
 }
 
-.success { 
-	border-color: darken($alert-green, 5%); 
-	background: $alert-green; 
-} 
+.success {
+	border-color: darken($alert-green, 5%);
+	background: $alert-green;
+}
 
 /*********************
 BORDER RADIUS
 *********************/
 
-/* 
-NOTE: For older browser support (and some mobile), 
-don't use the shorthand to define *different* corners. 
+/*
+NOTE: For older browser support (and some mobile),
+don't use the shorthand to define *different* corners.
 
-USAGE: @include rounded(4px); 
+USAGE: @include rounded(4px);
 
 */
 @mixin rounded($radius: 4px) {
@@ -148,7 +154,7 @@ USAGE: @include rounded(4px);
 	border-radius:         $radius;
 }
 
-/* 
+/*
 Instead of having a seperate mixin for the different
 borders, we're using the mixin from 320 & Up to make
 things easier to use.
@@ -171,7 +177,7 @@ USAGE: @include border-radius(4px,4px,0,0);
 	border-top-left-radius:             $topleft;
 	-webkit-background-clip:            padding-box;
 	-moz-background-clip:               padding;
-	background-clip:                    padding-box; 
+	background-clip:                    padding-box;
 }
 
 
@@ -207,7 +213,7 @@ BOX SHADOWS
 
 /*********************
 CSS3 GRADIENTS
-Be careful with these since they can 
+Be careful with these since they can
 really slow down your CSS. Don't overdue it.
 *********************/
 
@@ -226,7 +232,7 @@ BOX SIZING
 *********************/
 
 /* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So 
+/* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
 @mixin box-sizing($type: border-box) {
 	-webkit-box-sizing: $type;
@@ -235,7 +241,7 @@ probably best not to use it. I mean, were you going to anyway? */
 	box-sizing:         $type;
 }
 
- 
+
 /*********************
 BUTTONS
 *********************/
@@ -266,10 +272,10 @@ BUTTONS
 	 	border-left-color: darken($bones-pink, 20%);
 		@include css-gradient(darken($bones-pink, 5%), darken($bones-pink, 10%));
 	}
-	
+
 	&:active {
 		@include css-gradient(darken($bones-pink, 5%), $bones-pink);
-	}	
+	}
 }
 
 .blue-button, .blue-button:visited {
