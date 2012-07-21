@@ -126,3 +126,4 @@ function bones_custom_admin_footer() {
 // adding it to the admin area
 add_filter('admin_footer_text', 'bones_custom_admin_footer');
 
+?>
