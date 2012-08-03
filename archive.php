@@ -16,11 +16,13 @@
 							    <span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
 						    </h1>
 					    
-					    <?php } elseif (is_author()) { ?>
+					    <?php } elseif (is_author()) { 
+					    	global $post;
+					    	$author_id = $post->post_author;
+					    ?>
 						    <h1 class="archive-title h2">
-						    	<span><?php _e("Posts By:", "bonestheme"); ?></span> <?php get_the_author_meta('display_name'); ?>
+						    	<span><?php _e("Posts By:", "bonestheme"); ?></span> <?php echo get_the_author_meta('display_name', $author_id); ?>
 						    </h1>
-					    
 					    <?php } elseif (is_day()) { ?>
 						    <h1 class="archive-title h2">
 	    						<span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
@@ -45,11 +47,11 @@
 							
 							    <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 							
-							    <p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+							    <p class="byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <span class="author"><?php the_author_posts_link(); ?></span> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
 						
 						    </header> <!-- end article header -->
 					
-						    <section class="post-content clearfix">
+						    <section class="entry-content clearfix">
 						
 							    <?php the_post_thumbnail( 'bones-thumb-300' ); ?>
 						
@@ -84,7 +86,7 @@
     						    <header class="article-header">
     							    <h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
     					    	</header>
-    						    <section class="post-content">
+    						    <section class="entry-content">
     							    <p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
         						</section>
     	    					<footer class="article-footer">
