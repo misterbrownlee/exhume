@@ -20,7 +20,7 @@ remember less is more.
 CLEARFIXIN'
 *********************/
 
-/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
 .clearfix {
 	&:before,
 	&:after {
@@ -37,11 +37,40 @@ CLEARFIXIN'
 TOOLS
 *********************/
 
-/* http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ */
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ 
 .image-replacement {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+// BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
+* { 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box; 
+}
+
+/******************************************************************
+CUSTOMIZED RESET VALUES
+I added these extra styles as a more personalized reset. Feel free
+to remove them if you like or add your own. If you want to update
+the normalize styles, make sure to edit from this point up.
+******************************************************************/
+
+ul, ol {
+	padding: 0;
+	list-style-type: none;
+}
+
+dd {
+	margin: 0;
+}
+
+.sidebar ul,
+.sidebar ol,
+.commentlist {
+	list-style: none;
 }
 
 /*********************
@@ -61,6 +90,9 @@ $white:             #fff;
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
 
+$link-color:        $bones-pink;
+$link-hover:        darken($link-color, 9%);
+
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -74,6 +106,29 @@ TYPOGRAPHY
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
+// proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens) 
+p {
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+	  -epub-hyphens: auto;
+	        hyphens: auto;
+}
+
+b,
+strong,
+.strong {
+	font-weight: bold;
+}
+
+dfn,
+em,
+.em {
+	font-style: italic;
+}
+
+small, .small {
+	font-size: 75%;
+}
 
 /* 	To embed your own fonts, use this syntax
 	and place your fonts inside the
@@ -104,13 +159,13 @@ span.amp {
   font-style: italic;
 }
 
-/* text alignment */
+// text alignment 
 .text-left   { text-align: left; }
 .text-center { text-align: center; }
 .text-right  { text-align: right; }
 
 
-/* alerts & notices */
+// alerts & notices 
 .alert {
 	margin: 10px;
 	padding: 5px 18px;
@@ -248,9 +303,9 @@ BUTTONS
 
 .button, .button:visited {
 	font-family: $sans-serif;
-	border: 1px solid darken($bones-pink, 13%);
-	border-top-color: darken($bones-pink, 7%);
-	border-left-color: darken($bones-pink, 7%);
+	border: 1px solid darken($link-color, 13%);
+	border-top-color: darken($link-color, 7%);
+	border-left-color: darken($link-color, 7%);
 	padding: 4px 12px;
 	color: $white;
 	display: inline-block;
@@ -262,19 +317,19 @@ BUTTONS
 	margin-bottom: 20px;
 	line-height: 21px;
 	@include rounded(4px);
-	@include css-gradient($bones-pink, darken($bones-pink, 5%));
+	@include css-gradient($link-color, darken($link-color, 5%));
 
 
 	&:hover, &:focus {
 		color: $white;
-	  	border: 1px solid darken($bones-pink, 13%);
-	  	border-top-color: darken($bones-pink, 20%);
-	 	border-left-color: darken($bones-pink, 20%);
-		@include css-gradient(darken($bones-pink, 5%), darken($bones-pink, 10%));
+	  	border: 1px solid darken($link-color, 13%);
+	  	border-top-color: darken($link-color, 20%);
+	 	border-left-color: darken($link-color, 20%);
+		@include css-gradient(darken($link-color, 5%), darken($link-color, 10%));
 	}
 
 	&:active {
-		@include css-gradient(darken($bones-pink, 5%), $bones-pink);
+		@include css-gradient(darken($link-color, 5%), $link-color);
 	}
 }
 

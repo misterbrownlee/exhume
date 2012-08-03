@@ -14,6 +14,13 @@ BONES CHANGE LOG & HISTORY
 
 /* v1.3 update */
 - removed version number from scripts & styles (thanks James)
+- removed LESS (it's over Johnny, It's OVER!)
+- changed post-content to entry-content
+- added other changes to better align with Readability standards: http://www.readability.com/developers/guidelines (thanks @ChrisSki)
+- added comment gravatar variable
+- added fix for author name not showing in archive.php
+- removed unused css files (that were mistakingly compiled)
+- BORDER BOX ALL THE THINGS (http://paulirish.com/2012/box-sizing-border-box-ftw/)
 
 /* v1.25 update */
 - updated custom post type page for translation
