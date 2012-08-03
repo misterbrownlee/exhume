@@ -16,11 +16,11 @@
 							
 									<h3 class="search-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 							
-									<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+									<p class="byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <span class="author"><?php the_author_posts_link(); ?></span> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
 						
 								</header> <!-- end article header -->
 					
-								<section class="post-content">
+								<section class="entry-content">
 								    <?php the_excerpt('<span class="read-more">Read more &raquo;</span>'); ?>
 					
 								</section> <!-- end article section -->
@@ -52,7 +52,7 @@
     					    	<header class="article-header">
     					    		<h1><?php _e("Sorry, No Results.", "bonestheme"); ?></h1>
     					    	</header>
-    					    	<section class="post-content">
+    					    	<section class="entry-content">
     					    		<p><?php _e("Try your search again.", "bonestheme"); ?></p>
     					    	</section>
     					    	<footer class="article-footer">

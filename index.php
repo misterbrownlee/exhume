@@ -14,11 +14,11 @@
 							
 							    <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 							
-							    <p class="meta"><?php _e('Posted', 'bonestheme'); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> <?php _e('by', 'bonestheme'); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e('filed under', 'bonestheme'); ?> <?php the_category(', '); ?>.</p>
+							    <p class="byline vcard"><?php _e('Posted', 'bonestheme'); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time> <?php _e('by', 'bonestheme'); ?> <span class="author"><?php the_author_posts_link(); ?></span> <span class="amp">&</span> <?php _e('filed under', 'bonestheme'); ?> <?php the_category(', '); ?>.</p>
 						
 						    </header> <!-- end article header -->
 					
-						    <section class="post-content clearfix">
+						    <section class="entry-content clearfix">
 							    <?php the_content(); ?>
 						    </section> <!-- end article section -->
 						
@@ -53,7 +53,7 @@
 					            <header class="article-header">
 					        	    <h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
 					        	</header>
-					            <section class="post-content">
+					            <section class="entry-content">
 					        	    <p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
 					        	</section>
 					        	<footer class="article-footer">
