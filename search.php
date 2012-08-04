@@ -33,18 +33,16 @@
 					
 						<?php endwhile; ?>	
 					
-						    <?php if (function_exists('bones_page_navi')) { // if expirimental feature is active ?>
-						
-						        <?php bones_page_navi(); // use the page navi function ?>
-						
-					        <?php } else { // if it is disabled, display regular wp prev & next links ?>
+						    <?php if (function_exists('bones_page_navi')) { ?>
+						        <?php bones_page_navi(); ?>
+						    <?php } else { ?>
 						        <nav class="wp-prev-next">
-							        <ul class="clearfix">
-								        <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "bonestheme")) ?></li>
-								        <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "bonestheme")) ?></li>
-							        </ul>
+						            <ul class="clearfix">
+						    	        <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "bonestheme")) ?></li>
+						    	        <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "bonestheme")) ?></li>
+						            </ul>
 						        </nav>
-					        <?php } ?>			
+						    <?php } ?>		
 					
 					    <?php else : ?>
 					
@@ -64,7 +62,7 @@
 			
 				    </div> <!-- end #main -->
     			
-    			    <?php get_sidebar(); // sidebar 1 ?>
+    			    <?php get_sidebar(); ?>
     			
     			</div> <!-- end #inner-content -->
     

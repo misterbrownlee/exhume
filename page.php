@@ -32,9 +32,7 @@
 					
 					    </article> <!-- end article -->
 					
-					    <?php endwhile; ?>		
-					
-					    <?php else : ?>
+					    <?php endwhile; else : ?>
 					
     					    <article id="post-not-found" class="hentry clearfix">
     					    	<header class="article-header">
@@ -52,7 +50,7 @@
 			
     				</div> <!-- end #main -->
     
-				    <?php get_sidebar(); // sidebar 1 ?>
+				    <?php get_sidebar(); ?>
 				    
 				</div> <!-- end #inner-content -->
     

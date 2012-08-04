@@ -28,7 +28,7 @@
 							
 								</footer> <!-- end article footer -->
 					
-								<?php comments_template(); // comments should go inside the article element ?>
+								<?php comments_template(); ?>
 					
 							</article> <!-- end article -->
 					
@@ -52,7 +52,7 @@
 			
 					</div> <!-- end #main -->
     
-					<?php get_sidebar(); // sidebar 1 ?>
+					<?php get_sidebar(); ?>
 
 				</div> <!-- end #inner-content -->
     
