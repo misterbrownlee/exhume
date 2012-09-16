@@ -22,27 +22,14 @@ CLEARFIXIN'
 
 // Contain floats: nicolasgallagher.com/micro-clearfix-hack/
 .clearfix {
-	&:before,
-	&:after {
-		content: "";
-    	display: table;
-	}
-	&:after {
-		clear: both;
-	}
-	zoom: 1;
+  zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
 }
 
 /*********************
 TOOLS
 *********************/
-
-// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ 
-.image-replacement {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
 
 // BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
 * { 
@@ -51,26 +38,11 @@ TOOLS
 	box-sizing:         border-box; 
 }
 
-/******************************************************************
-CUSTOMIZED RESET VALUES
-I added these extra styles as a more personalized reset. Feel free
-to remove them if you like or add your own. If you want to update
-the normalize styles, make sure to edit from this point up.
-******************************************************************/
-
-ul, ol {
-	padding: 0;
-	list-style-type: none;
-}
-
-dd {
-	margin: 0;
-}
-
-.sidebar ul,
-.sidebar ol,
-.commentlist {
-	list-style: none;
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ 
+.image-replacement {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 /*********************
@@ -106,29 +78,6 @@ TYPOGRAPHY
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
-// proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens) 
-p {
-	-webkit-hyphens: auto;
-	   -moz-hyphens: auto;
-	  -epub-hyphens: auto;
-	        hyphens: auto;
-}
-
-b,
-strong,
-.strong {
-	font-weight: bold;
-}
-
-dfn,
-em,
-.em {
-	font-style: italic;
-}
-
-small, .small {
-	font-size: 75%;
-}
 
 /* 	To embed your own fonts, use this syntax
 	and place your fonts inside the
