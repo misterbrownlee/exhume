@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MYNAME/my-bones-theme"
+    "url": "https://github.com/GIT_USERNAME_TOKEN/THEME_NAME_TOKEN"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -12,5 +12,15 @@
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-less": "~0.5.2",
     "grunt-contrib-watch": "~0.4.4"
-  }
+  },
+  "keywords": [
+    "bones",
+    "magic",
+    "wordpress",
+    "theme",
+    "booyah",
+    "whatevs"
+  ],
+  "author": "THEME_AUTHOR_TOKEN",
+  "license": "Public Domain"
 }
