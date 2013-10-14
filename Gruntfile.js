@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         options: {
           questions: [
             {
-              config: 'setup.gitname', 
+              config: 'prompt.gitname', 
               type: 'input', 
               message: 'Enter your github username (used to build a clone URL):',
               validate: function(value) { 
@@ -37,27 +37,37 @@ module.exports = function(grunt) {
         options: {
           questions: [
             {
-              config: 'gitclone.theme.options.repository', 
+              config: 'prompt.repo', 
               type: 'input', 
-              message: 'Enter your theme name (also used to build a clone URL):',
+              message: 'Enter your theme repo name (also used to build a clone URL):',
               validate: function (value) { 
                 return (value) ? true : "uh... that's not a theme name";
               },
               filter: function (value) {
-                var repoUrl = 'http://github.com/' 
-                repoUrl += grunt.config('setup.gitname');
+                var repoUrl = 'https://github.com/' 
+                repoUrl += grunt.config('prompt.gitname');
                 repoUrl += '/';
                 repoUrl += value;
                 repoUrl += '.git';
-                console.log('repoUrl', repoUrl);
-                return repoUrl;
+                grunt.log.ok('Using ' + repoUrl);
+                // set the answer value as an additional config property
+                grunt.config.set('gitclone.theme.options.repository', repoUrl);
+                // grunt.config.set('prompt.repo', value);
+                return value;
               }
             }
           ]
         }
       }
-    }  // /prompt <-- contains 'prom', which none of us went to
-    
+    },  // /prompt <-- contains 'prom', which none of us attended
+    copy: {
+      payload: {
+        files: [
+          {expand: true, cwd: 'bones/', src: ['**'], dest: '<%= prompt.repo %>/'},
+          {expand: true, cwd: 'res/', src: ['**'], dest: '<%= prompt.repo %>/'}
+        ]
+      }
+    }
    
   });
 
@@ -67,6 +77,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task.
-  grunt.registerTask('default', ['prompt', 'gitclone']);
+  grunt.registerTask('default', ['prompt', 'gitclone', 'copy']); // 
 
 };
