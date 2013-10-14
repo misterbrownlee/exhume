@@ -60,13 +60,28 @@ module.exports = function(grunt) {
         }
       }
     },  // /prompt <-- contains 'prom', which none of us attended
+    
     copy: {
       payload: {
         files: [
-          {expand: true, cwd: 'bones/', src: ['**'], dest: '<%= prompt.repo %>/'},
+          {expand: true, cwd: 'bones/', src: ['**'], dest: '<%= prompt.repo %>/'}
+        ]
+      }
+    }, 
+
+    replace: {
+      meta: {
+        options: {
+          patterns: [
+            { match: 'GIT_USERNAME_TOKEN', replacement: '<%= prompt.gitname %>'},
+            { match: 'THEME_NAME_TOKEN', replacement: '<%= prompt.repo %>'}
+          ],
+        },
+        files: [
           {expand: true, cwd: 'res/', src: ['**'], dest: '<%= prompt.repo %>/'}
         ]
       }
+
     }
    
   });
@@ -75,8 +90,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-prompt');
   grunt.loadNpmTasks('grunt-git');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-replace');
 
   // Default task.
-  grunt.registerTask('default', ['prompt', 'gitclone', 'copy']); // 
+  grunt.registerTask('default', ['prompt', 'gitclone', 'copy', 'replace']);
 
 };

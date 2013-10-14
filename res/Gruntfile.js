@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
 
-  // deploy path is a symlink to my local wp instance 
-  // themes folder > bones
+  // make symlink 'output' to local wordpress themes folder instance of @@THEME_NAME_TOKEN
+  // ln -s path/to/local/wordpress/wp-content/themes/@@THEME_NAME_TOKEN output
+
   var dirs = {
         deploy: 'output'
     };

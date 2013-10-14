@@ -1,8 +1,8 @@
-# THEME_NAME_TOKEN
+# @@THEME_NAME_TOKEN
 
 This is a [Bones][bones_url] based theme, setup using [exhume][exhume_url].
 
-Theme Author: GIT_USERNAME_TOKEN
+Theme Author: @@GIT_USERNAME_TOKEN
 
 # License
 This is free and unencumbered software released into the public domain.  

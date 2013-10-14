@@ -1,9 +1,9 @@
 {
-  "name": "THEME_NAME_TOKEN",
+  "name": "@@THEME_NAME_TOKEN",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GIT_USERNAME_TOKEN/THEME_NAME_TOKEN"
+    "url": "https://github.com/@@GIT_USERNAME_TOKEN/@@THEME_NAME_TOKEN"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -21,6 +21,6 @@
     "booyah",
     "whatevs"
   ],
-  "author": "THEME_AUTHOR_TOKEN",
+  "author": "@@GIT_USERNAME_TOKEN",
   "license": "Public Domain"
 }
