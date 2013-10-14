@@ -4,7 +4,7 @@ A magical copypasta script.
 
 ## WHAT
 
-This is a Grunt.js script that will copy everything you need to start you own Wordpress theme using the Bones starter theme as your base.
+This is a Grunt.js script that will copy everything you need to start you own Wordpress theme using the [Bones][bones_link] starter theme as your base.
 
 It will:  
 - clone your new theme's empty repository
@@ -34,3 +34,4 @@ You will need a new repo in github for your new theme.  You will also need `npm`
 - repeat as needed for new themes
 - profit
 
+[bones_link]: https://github.com/eddiemachado/bones
