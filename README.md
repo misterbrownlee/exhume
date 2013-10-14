@@ -1,6 +1,6 @@
 EXHUME  
 ==========
-A magical copypastsa script.
+A magical copypasta script.
 
 ## WHAT
 
