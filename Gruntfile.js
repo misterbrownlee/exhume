@@ -50,9 +50,9 @@ module.exports = function(grunt) {
                 repoUrl += value;
                 repoUrl += '.git';
                 grunt.log.ok('Using ' + repoUrl);
-                // set the answer value as an additional config property
+                // set the url value as config for clone
                 grunt.config.set('gitclone.theme.options.repository', repoUrl);
-                // grunt.config.set('prompt.repo', value);
+                // grunt.config.set('gitclone.theme.options.directory', '../' + value);
                 return value;
               }
             }
@@ -60,11 +60,19 @@ module.exports = function(grunt) {
         }
       }
     },  // /prompt <-- contains 'prom', which none of us attended
+
+      gitclone:  {
+        theme: {
+          options: {
+            directory: '../<%= prompt.repo %>'
+          }
+        }
+      },
     
     copy: {
       payload: {
         files: [
-          {expand: true, cwd: 'bones/', src: ['**'], dest: '<%= prompt.repo %>/'}
+          {expand: true, cwd: 'bones/', src: ['**'], dest: '../<%= prompt.repo %>/'}
         ]
       }
     }, 
@@ -78,7 +86,7 @@ module.exports = function(grunt) {
           ],
         },
         files: [
-          {expand: true, cwd: 'res/', src: ['**'], dest: '<%= prompt.repo %>/'}
+          {expand: true, cwd: 'res/', src: ['**'], dest: '../<%= prompt.repo %>/'}
         ]
       }
 
@@ -91,6 +99,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-git');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-replace');
+
+  // grunt.task.registerTask('move', 'Move the exhumed template out of this folder.', function() {
+  //   if (arguments.length === 0) {
+  //     grunt.log.writeln(this.name + ", no args");
+  //   } else {
+  //     grunt.log.writeln(this.name + ", " + arg1 + " " + arg2);
+  //   }
+  // });
 
   // Default task.
   grunt.registerTask('default', ['prompt', 'gitclone', 'copy', 'replace']);
