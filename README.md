@@ -14,22 +14,22 @@ It will:
 - create a Gruntfile you can use for working on Bones
 - possibly impress your friends
 
-Once exhume is done, you would then go to the repo directory of your theme and follow the directions there to get working.
+Once Exhume is done, you would then go to the repo directory of your theme and follow the directions there to start working on your theme.
 
 ## SETUP
 You will need a new repo in github for your new theme.  You will also need `npm` and `grunt-cli` installed.
 
 ## HOW
-- fork/clone exhume with the clone URL --> over there
-- make a new repo 'my_nifty_theme' in github with no `README` and no `.gitignore`
+- fork/clone Exhume with the clone URL `git clone git@github.com:tehfoo/exhume.git`
+- [create][https://github.com/new] a new repo 'my_nifty_theme' in github with no `README` and no `.gitignore`
 - derp: 'my_nifty_theme' is the name of the theme you are making 
 - do this: `cd exhume`
 - then this: `npm install`
 - then this: `grunt`
 - exhume will ask you for your git username (no worries, it's just building a clone url)
 - next, exhume will ask you for the name of your new theme's repository (again, for the clone url)
-- next, magic!
-- now you can `cd ../my_nifty_theme` and check out your new Bones based Wordpress theme
+- magic!
+- now you can `cd ../my_nifty_theme` and start working on your new Bones based Wordpress theme
 - read the INSTRUCTIONS for help with your project's Grunt tasks that will compile your theme.
 - repeat as needed for new themes
 - profit
