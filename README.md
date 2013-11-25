@@ -1,6 +1,6 @@
 EXHUME  
 ==========
-A magical copypasta script.
+TL;DR: A magical copypasta script for [Bones][bones_link] based Wordpress theme creation.  Create a repo for your theme, clone Exhume, run the script, and you'll be quickly developing your theme!
 
 ## WHAT
 
