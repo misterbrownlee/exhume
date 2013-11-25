@@ -29,7 +29,7 @@ Once you have npm, just do this: `npm install -g grunt-cli`
 
 ## HOW
 - fork/clone Exhume with the clone URL `git clone git@github.com:tehfoo/exhume.git`
-- [create](https://github.com/new) a new repo 'my_nifty_theme' in github with no `README` and no `.gitignore`
+- [create](https://github.com/new) a new repo 'my_nifty_theme' in github
 - derp: 'my_nifty_theme' is the name of the theme you are making 
 - do this: `cd exhume`
 - then this: `npm install`
