@@ -43,10 +43,11 @@ module.exports = function(grunt) {
       install: {
         files: [{
           expand: true,
-          cwd: '/',
-          src: '**/*.php',
-          dest: '<%=dirs.wordpress%>/themes/<%=pkg.name%>'
-          exclude:
+          cwd: '',
+          src: ['*.php', 'style.css', 'library/images/*', 
+            'library/css/*','library/js/*','library/translation/*','library/**/*.php'
+          ],
+          dest: '<%=dirs.wordpress%>/wp-content/themes/<%=pkg.name%>'
         }]
       }
     },
