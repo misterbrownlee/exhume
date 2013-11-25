@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
   var dirs = {
         deploy: 'output'
+        wordpress: 'PATH_TO_WORDPRESS_ROOT'
     };
 
   grunt.initConfig({
@@ -37,6 +38,15 @@ module.exports = function(grunt) {
           cwd: 'library/css/',
           src: '**',
           dest: '<%=dirs.deploy%>/library/css/'
+        }]
+      },
+      install: {
+        files: [{
+          expand: true,
+          cwd: '/',
+          src: '**/*.php',
+          dest: '<%=dirs.wordpress%>/themes/<%=pkg.name%>'
+          exclude:
         }]
       }
     },
