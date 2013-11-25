@@ -1,11 +1,10 @@
 module.exports = function(grunt) {
 
-  // make symlink 'output' to local wordpress themes folder instance of @@THEME_NAME_TOKEN
-  // ln -s path/to/local/wordpress/wp-content/themes/@@THEME_NAME_TOKEN output
-
   var dirs = {
-        deploy: 'output'
-        wordpress: 'PATH_TO_WORDPRESS_ROOT'
+        output: 'output' 
+        // optionally a path to Wordpress root
+        // eg '/Users/tehfoo/Documents/code/local_wordpress'
+        // eg '/Volumes/ftp/someSiteMount/wordpress'
     };
 
   grunt.initConfig({
@@ -32,29 +31,29 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      css: {
-        files: [{
-          expand: true,
-          cwd: 'library/css/',
-          src: '**',
-          dest: '<%=dirs.deploy%>/library/css/'
-        }]
-      },
-      install: {
+      theme: {
         files: [{
           expand: true,
           cwd: '',
           src: ['*.php', 'style.css', 'library/images/*', 
             'library/css/*','library/js/*','library/translation/*','library/**/*.php'
           ],
-          dest: '<%=dirs.wordpress%>/wp-content/themes/<%=pkg.name%>'
+          dest: '<%=dirs.output%>/wp-content/themes/<%=pkg.name%>'
+        }]
+      },
+      css: {
+        files: [{
+          expand: true,
+          cwd: 'library/css/',
+          src: '**',
+          dest: '<%=dirs.output%>/wp-content/themes/<%=pkg.name%>/library/css/'
         }]
       }
     },
     
     watch: {
       files: ['library/less/*.less'],
-      tasks: ['less', 'cssmin', 'copy']
+      tasks: ['compile-debug']
     }
   });
 
@@ -63,7 +62,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['less']);
+  grunt.registerTask('compile', ['less', 'cssmin', 'copy:css']);
+  grunt.registerTask('compile-debug', ['less', 'copy:css']);
+  grunt.registerTask('deploy', ['less', 'cssmin', 'copy:theme']);
+  grunt.registerTask('default', ['deploy']);
 
 };
 
