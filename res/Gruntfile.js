@@ -21,9 +21,9 @@ module.exports = function(grunt) {
         },
         files: {
           
-          'library/css/style.css': 'library/scss/style.less'
-          'library/css/ie.css': 'library/scss/ie.less'
-          'library/css/login.css': 'library/scss/login.less'
+          'library/css/style.css': 'library/less/style.less'
+          'library/css/ie.css': 'library/less/ie.less'
+          'library/css/login.css': 'library/less/login.less'
         }
       }
     },
