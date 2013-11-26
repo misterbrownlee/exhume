@@ -1,23 +1,10 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-  // WHAT HAPPEN:
-  // prompt for git user name
-  // prompt for 'your theme'
-
-  // grunt-git clone http://github.com ../your_theme
-
-  // copypasta ./bones -> ../your_theme
-  // copypasta ./res/package.json ../your_theme
-  // token replace ../yourtheme/package.json {GIT_USERNAME_TOKEN}
-  // token replace ../yourtheme/package.json {THEME_NAME_TOKEN}
-  // token replace ../yourtheme/package.json {THEME_AUTHOR_TOKEN}
-
-
-  // Project configuration.
   grunt.initConfig({
 
-    prompt:  { // Yes, this will nest four levels deep. Be afraid.
+    prompt:  { 
+      // Yes, this will nest four levels deep. Be afraid.  It's not my fault.
       gitname: {
         options: {
           questions: [
@@ -58,7 +45,29 @@ module.exports = function(grunt) {
             }
           ]
         }
-      }
+      }, // prompt repo
+      preprocessor: {
+        options: {
+          questions: [
+            {
+              config: 'prompt.preprocessor',
+              type: 'list',
+              message: 'Pick a CSS pre-processor (Sass or LESS):',
+              choices: [
+                {
+                  value: 'sass',
+                  name:  'Sass'
+                },
+                {
+                  value: 'less',
+                  name:  'LESS'
+                }
+              ]
+            }
+          ]
+        } 
+      }// preprocessor
+
     },  // /prompt <-- contains 'prom', which none of us attended
 
       gitclone:  {
@@ -82,7 +91,8 @@ module.exports = function(grunt) {
         options: {
           patterns: [
             { match: 'GIT_USERNAME_TOKEN', replacement: '<%= prompt.gitname %>'},
-            { match: 'THEME_NAME_TOKEN', replacement: '<%= prompt.repo %>'}
+            { match: 'THEME_NAME_TOKEN', replacement: '<%= prompt.repo %>'},
+            { match: 'CSS_PREPROCESSOR_NAME', replacement: '<%= prompt.preprocessor %>'},
           ],
         },
         files: [

@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
   var dirs = {
-        output: 'output' 
+        output: 'output'
         // optionally a path to Wordpress root
         // eg '/Users/tehfoo/Documents/code/local_wordpress'
         // eg '/Volumes/ftp/someSiteMount/wordpress'
@@ -11,6 +11,9 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     dirs: dirs,
 
+    // note: config for both Sass and LESS are here
+    // but you could theoretically delete the config for
+    // the one you aren't using if you're a neat freak
     less: {
       development: {
         options: {
@@ -18,6 +21,18 @@ module.exports = function(grunt) {
         },
         files: {
           "library/css/style.full.css": "library/less/style.less"
+        }
+      }
+    },
+
+    sass: {
+      dist: {
+        options: {
+        style: 'expanded',
+        noCache: true
+        },
+        files: {
+          'library/css/style.css': 'library/scss/style.scss'
         }
       }
     },
@@ -52,19 +67,19 @@ module.exports = function(grunt) {
     },
     
     watch: {
-      files: ['library/less/*.less'],
+      files: ['library/less/*', 'library/scss/*'],
       tasks: ['compile-debug']
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-@@CSS_PREPROCESSOR_NAME');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('compile', ['less', 'cssmin', 'copy:css']);
-  grunt.registerTask('compile-debug', ['less', 'copy:css']);
-  grunt.registerTask('deploy', ['less', 'cssmin', 'copy:theme']);
+  grunt.registerTask('compile', ['@@CSS_PREPROCESSOR_NAME', 'cssmin', 'copy:css']);
+  grunt.registerTask('compile-debug', ['@@CSS_PREPROCESSOR_NAME', 'copy:css']);
+  grunt.registerTask('deploy', ['@@CSS_PREPROCESSOR_NAME', 'cssmin', 'copy:theme']);
   grunt.registerTask('default', ['deploy']);
 
 };
