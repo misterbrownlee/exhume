@@ -1,11 +1,11 @@
 /******************************************************************
 Theme Name: Bones (Rename Me!)
 Theme URI: http://www.themble.com/bones
-Description: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href="https://github.com/eddiemachado/bones/issues" title="Bones Issues">Bones Issues</a> page on Github. You'll want to customize this for your clients with your own information.
+Description: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href="https://github.com/eddiemachado/bones/issues" title="Bones Issues">Bones Issues</a> page on Github. You can also view the conversation on Twitter by following the hashtag: <a href="http://twitter.com/#!/search/%23wpbones">#wpbones</a>.
 Author: Your Name Here
 Author URI: http://www.yoururlhere.com
 Version: 1.3
-Tags: flexible-width, translation-ready, microformats, rtl-language-support
+Tags: flexble-width, translation-ready, microformats, rtl-language-support
 
 License: WTFPL
 License URI: http://sam.zoy.org/wtfpl/
@@ -21,7 +21,8 @@ WHOA, WHOA, WHOA…WHAT HAPPENED HERE?
 
 But before you freak out, let me take a few minutes to explain.
 
-Bones now uses LESS or Sass by default. If you prefer
+Bones now uses LESS or Sass by default. I'm no longer supporting
+the old-style.css file which contains regular css. If you're prefer
 using regular CSS, then feel free to modify this theme how you like
 and keep a copy as your own personal starting point.
 
@@ -31,7 +32,6 @@ COMPLICATED AS YOU THINK.
 It does take a few minutes to wrap your head around, but it will all
 be worth it. Need a quick intro? Here are a few quick reads:
 
-http://cognition.happycog.com/article/preprocess-this
 http://coding.smashingmagazine.com/2011/09/09/an-introduction-to-less-and-comparison-to-sass/
 
 I would HIGHLY RECOMMEND, if you are going to be working with

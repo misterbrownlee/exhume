@@ -1,4 +1,4 @@
-## BONES CHANGE LOG & HISTORY
+Bones - A Lightweight Wordpress Developer Template
 
 This theme is meant to make development easier & take
 advantage of modern web development & design techniques.
@@ -8,14 +8,11 @@ http://themble.com/bones/
 
 Author: Eddie Machado
 
-*******************************************************************
+/******************************************************************
+BONES CHANGE LOG & HISTORY
+******************************************************************/
 
-**v1.4 update**
-- updated Modernizr to 2.6.2
-- merged a ton of pull requests (thanks guys and gals!)
-- added windows 8 tile support
-
-**v1.3 update**
+/* v1.3 update */
 - removed version number from scripts & styles (thanks James)
 - removed LESS (it's over Johnny, It's OVER!)
 - changed post-content to entry-content
@@ -25,7 +22,7 @@ Author: Eddie Machado
 - removed unused css files (that were mistakingly compiled)
 - BORDER BOX ALL THE THINGS (http://paulirish.com/2012/box-sizing-border-box-ftw/)
 
-**v1.25 update**
+/* v1.25 update */
 - updated custom post type page for translation
 - added => to responsive jquery
 - cleaned up theme tags (which make NO sense, but are best practice, go figure)
@@ -36,7 +33,7 @@ Author: Eddie Machado
 - cleaned up mixins (border radius)
 - added translations! (Chinese, Spanish)
 
-**v1.2 HUGE update**
+/* v1.2 HUGE update */
 - merge responsive version with classic
 - remove post title from read more link (it's way too long)
 - removed readme.txt (it was pointless)
@@ -72,12 +69,12 @@ Author: Eddie Machado
 - rel=me can also be handled by SEO plugin or another plugin
 - removed author.php (you can use archive.php or add it yourself)
 
-**v1.09 more updates**
+/* v1.09 more updates */
 - updated admin.php to include custom widget examples, admin login styles, and admin footer
 - login.css added for custom login styles
 - custom login logo included
 
-**v1.09 updates**
+/* v1.09 updates */
 - added snippet to remove < p > from imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 - added custom admin functions file
 - updated normalize
@@ -90,7 +87,7 @@ Author: Eddie Machado
 - added tag & category examples to custom post type
 
 
-**v1.08 release (hellz yea!)**
+/*v1.08 release (hellz yea!) */
 - replaced default.css with normalize.css
 - added responsive.css
 - completely revamped styles & stylesheets
@@ -130,11 +127,11 @@ Author: Eddie Machado
 - removed html5 video shortcode
 
 
-**v1.07 more changes**
+/*v1.07 more changes */
 - updated selectivizr
 - compressed images
 
-**v1.07 changes**
+/*v1.07 changes */
 - added modernizr 2.0 custom build
 - added IE=edge,chrome=1 for older, shitty browsers
 - removed iphone stuff ( you can add later if you want it )
@@ -144,7 +141,7 @@ Author: Eddie Machado
 - fixed errors on style.css (mostly removing example using parenthesis)
 - added jquery 1.6.1
 
-**v1.07 w00t!**
+/*v1.07 w00t! */
 - changed clear to clearfix across the board
 - added 320 & Up Boilerplate Extension by Andy Clarke
 - renamed modernizr to the current version file
@@ -152,14 +149,14 @@ Author: Eddie Machado
 - updated DOMAssistant to newest version
 
 
-**v1.06 More Updates**
+/*v1.06 More Updates */
 - added theme translation to all files
 - removed categories form page meta info
 - fixed confusing copyright issues
 - removed the unneeded author / tag / ect archive title from taxonomy-custom-cat.php
 
 
-**v1.06 Updates**
+/* v1.06 Updates */
 - changed name of default stylesheet to default so it's easier to
 	debug. (having two stylesheets named style is confusing)
 - added clearing class to #inner-header and #inner-footer
@@ -176,12 +173,12 @@ Author: Eddie Machado
 - adding standard categories & tags to custom post type example
 
 
-**v1.06**
+/* v1.06 */
 - added custom post type and taxonomies file
 - created custom post type template
 - added readme.txt file (really for no reason at all)
 - fixed the margin on the comments title
-- removed duplicate text-align calls in css **Thanks Dom**
+- removed duplicate text-align calls in css /* Thanks Dom */
 - added add_theme_support( 'automatic-feed-links' ) replacing
 	the deprecated automatic_feed_links();
 - added the language_attributes(); to the html tag
@@ -189,7 +186,7 @@ Author: Eddie Machado
 - bloginfo('url') in header replaced with echo home_url()
 - using get_template_directory_uri() instead of bloginfo('template_directory')
 - using get_the_author_meta('display_name') instead of deprecated function
-- fixed error in bones.php for menu fallback **thanks Mark**
+- fixed error in bones.php for menu fallback /* thanks Mark */
 - creating thumbnail fallback functions
 - added header.js and moved modernizr & imgsizer in that file
 - added lazy load jquery plugin
@@ -200,7 +197,7 @@ Author: Eddie Machado
 - removed the top margin of the footer menu
 
 
-**v1.05**
+/* v1.05 */
 - fixed typos in style.css file & logs
 - updated selectivizr to latest version
 - added "embed, ruby, output" to the reset stylesheet based on
@@ -210,11 +207,11 @@ Author: Eddie Machado
 - added text-align styles to default stylesheet
 
 
-**v1.04 Quick Fix**
+/* v1.04 Quick Fix */
 - fixed error with script call that was deprecated.
 
 
-**v1.04**
+/* v1.04 */
 - moved the custom script call and pngfix to the footer
 	from the bones file so it's easier to see what's being
 	called.
@@ -231,24 +228,24 @@ Author: Eddie Machado
 	and index pages.
 
 
-**v1.03**
+/* v1.03 */
 - public release!
 - added html5 video to plugins
 - added page navi to plugins
 - general fixes and optimization
 
 
-**v1.02**
+/* v1.02 */
 - html5 updates and semantic layout corrected
 - added search css & custom functions
 - added functionality from the html5boilerplate
 
 
-**v1.01**
+/* v1.01 */
 - added related posts functions
 - general css fixes
 
 
-**v1.00**
+/* v1.00 */
 - i thought "there must be a better way"
 - did something about it

@@ -12,7 +12,6 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e;_n\n"
 "X-Poedit-Basepath: /home/fulgor/GIT/bones\n"
-"Last-Translator: \n"
 "X-Poedit-SearchPath-0: /home/fulgor/GIT/bones\n"
 
 #: comments.php:12
@@ -80,7 +79,8 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: comments.php:93 comments.php:98
+#: comments.php:93
+#: comments.php:98
 msgid "(required)"
 msgstr ""
 
@@ -125,19 +125,26 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: taxonomy-custom_cat.php:22 archive.php:9
+#: taxonomy-custom_cat.php:22
+#: archive.php:9
 msgid "Posts Categorized:"
 msgstr ""
 
-#: taxonomy-custom_cat.php:32 embed-post_meta.php:1 single-custom_type.php:30
+#: taxonomy-custom_cat.php:32
+#: embed-post_meta.php:1
+#: single-custom_type.php:30
 msgid "Posted"
 msgstr ""
 
-#: taxonomy-custom_cat.php:32 embed-post_meta.php:1 single-custom_type.php:30
+#: taxonomy-custom_cat.php:32
+#: embed-post_meta.php:1
+#: single-custom_type.php:30
 msgid "by"
 msgstr ""
 
-#: taxonomy-custom_cat.php:32 embed-post_meta.php:1 single-custom_type.php:30
+#: taxonomy-custom_cat.php:32
+#: embed-post_meta.php:1
+#: single-custom_type.php:30
 msgid "filed under"
 msgstr ""
 
@@ -166,8 +173,7 @@ msgid "Epic 404 - Article Not Found"
 msgstr ""
 
 #: 404.php:17
-msgid ""
-"The article you were looking for was not found, but maybe try looking again!"
+msgid "The article you were looking for was not found, but maybe try looking again!"
 msgstr ""
 
 #: search.php:7
@@ -182,7 +188,8 @@ msgstr ""
 msgid "Posts Tagged:"
 msgstr ""
 
-#: archive.php:17 author.php:8
+#: archive.php:17
+#: author.php:8
 msgid "Posts By:"
 msgstr ""
 

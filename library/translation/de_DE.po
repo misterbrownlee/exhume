@@ -12,14 +12,11 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e;_n\n"
 "X-Poedit-Basepath: /home/fulgor/GIT/bones\n"
-"Last-Translator: \n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: comments.php:12
 msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
-"Dieser Eintrag ist durch ein Passwort geschützt. Bitte Passwort eingeben, um "
-"Kommentare zu lesen."
+msgstr "Dieser Eintrag ist durch ein Passwort geschützt. Bitte Passwort eingeben, um Kommentare zu lesen."
 
 #: comments.php:23
 msgid "Response"
@@ -82,7 +79,8 @@ msgstr "Abmelden"
 msgid "Name"
 msgstr "Name"
 
-#: comments.php:93 comments.php:98
+#: comments.php:93
+#: comments.php:98
 msgid "(required)"
 msgstr "(Pflichtfeld)"
 
@@ -127,19 +125,26 @@ msgstr "Sie können diese Auszeichnungen nutzen"
 msgid "Page %s"
 msgstr "Seite %s"
 
-#: taxonomy-custom_cat.php:22 archive.php:9
+#: taxonomy-custom_cat.php:22
+#: archive.php:9
 msgid "Posts Categorized:"
 msgstr "Zugeordnete Einträge:"
 
-#: taxonomy-custom_cat.php:32 embed-post_meta.php:1 single-custom_type.php:30
+#: taxonomy-custom_cat.php:32
+#: embed-post_meta.php:1
+#: single-custom_type.php:30
 msgid "Posted"
 msgstr "Eingetragen"
 
-#: taxonomy-custom_cat.php:32 embed-post_meta.php:1 single-custom_type.php:30
+#: taxonomy-custom_cat.php:32
+#: embed-post_meta.php:1
+#: single-custom_type.php:30
 msgid "by"
 msgstr "von"
 
-#: taxonomy-custom_cat.php:32 embed-post_meta.php:1 single-custom_type.php:30
+#: taxonomy-custom_cat.php:32
+#: embed-post_meta.php:1
+#: single-custom_type.php:30
 msgid "filed under"
 msgstr "abgelegt unter"
 
@@ -168,11 +173,8 @@ msgid "Epic 404 - Article Not Found"
 msgstr "404 - Artikel wurde nicht gefunden"
 
 #: 404.php:17
-msgid ""
-"The article you were looking for was not found, but maybe try looking again!"
-msgstr ""
-"Der gesuchte Artikel wurde nicht gefunden. Versuchen Sie es mit einem "
-"ähnlichen Suchbegriff."
+msgid "The article you were looking for was not found, but maybe try looking again!"
+msgstr "Der gesuchte Artikel wurde nicht gefunden. Versuchen Sie es mit einem ähnlichen Suchbegriff."
 
 #: search.php:7
 #, fuzzy
@@ -187,7 +189,8 @@ msgstr "Lesen Sie mehr über"
 msgid "Posts Tagged:"
 msgstr "Einträge mit dem Schlagwort:"
 
-#: archive.php:17 author.php:8
+#: archive.php:17
+#: author.php:8
 msgid "Posts By:"
 msgstr "Einträge von:"
 
@@ -377,9 +380,7 @@ msgstr "Name für eigene Schlagwort hinzufügen"
 
 #~ msgid "No Posts Yet"
 #~ msgstr "Bislang keine Einträge"
-
 #~ msgid "Sorry, What you were looking for is not here."
 #~ msgstr "Wonach Sie gesucht haben, gibt es hier nicht."
-
 #~ msgid "<span class=\"read-more\">Read more on \""
 #~ msgstr "<span class=\"read-more\">Mehr lesen über \""
