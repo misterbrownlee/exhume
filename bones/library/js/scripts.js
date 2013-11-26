@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
     /*
     Responsive jQuery is a tricky thing.
     There's a bunch of different ways to handle
-    it, so be sure to research and find the one
+    it so, be sure to research and find the one
     that works for you best.
     */
     

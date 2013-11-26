@@ -8,7 +8,8 @@ This is where you can take advantage of Sass' great features:
 Mixins & Constants. I won't go in-depth on how they work exactly,
 there are a few articles below that will help do that. What I will
 tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
 
 A WORD OF WARNING: It's very easy to overdo it here. Be careful and
 remember less is more.
@@ -31,19 +32,18 @@ TOOLS
 *********************/
 
 // BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
-	box-sizing:         border-box;
+* { 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box; 
 }
 
-// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ 
 .image-replacement {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
 }
-
 
 /*********************
 COLORS
@@ -70,7 +70,6 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
-
 
 /*********************
 TYPOGRAPHY
@@ -109,68 +108,117 @@ span.amp {
   font-style: italic;
 }
 
-// text alignment
+// text alignment 
 .text-left   { text-align: left; }
 .text-center { text-align: center; }
 .text-right  { text-align: right; }
 
 
-// alerts and notices
-%alert {
+// alerts & notices 
+.alert {
 	margin: 10px;
 	padding: 5px 18px;
 	border: 1px solid;
 }
 
-.alert-help {
-	@extend %alert;
+.help {
 	border-color: darken($alert-yellow, 5%);
 	background: $alert-yellow;
 }
 
-.alert-info {
-	@extend %alert;
+.info {
 	border-color: darken($alert-blue, 5%);
 	background: $alert-blue;
 }
 
-.alert-error {
-	@extend %alert;
+.error {
 	border-color: darken($alert-red, 5%);
 	background: $alert-red;
 }
 
-.alert-success {
-	@extend %alert;
+.success {
 	border-color: darken($alert-green, 5%);
 	background: $alert-green;
 }
 
 /*********************
-TRANSITION
+BORDER RADIUS
 *********************/
 
 /*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
+NOTE: For older browser support (and some mobile),
+don't use the shorthand to define *different* corners.
+
+USAGE: @include rounded(4px);
+
 */
+@mixin rounded($radius: 4px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius:    $radius;
+	border-radius:         $radius;
+}
 
-@mixin transition($transition...) {
-	// defining prefixes so we can use them in mixins below
-	$prefixes:      ("-webkit",  "");
-  @each $prefix in $prefixes {
-    #{$prefix}-transition: $transition;
-  }
+/*
+Instead of having a seperate mixin for the different
+borders, we're using the mixin from 320 & Up to make
+things easier to use.
 
-  transition: $transition;
+USAGE: @include border-radius(4px,4px,0,0);
+
+*/
+@mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+	-webkit-border-top-right-radius:    $topright;
+	-webkit-border-bottom-right-radius: $bottomright;
+	-webkit-border-bottom-left-radius:  $bottomleft;
+	-webkit-border-top-left-radius:     $topleft;
+	-moz-border-radius-topright:        $topright;
+	-moz-border-radius-bottomright:     $bottomright;
+	-moz-border-radius-bottomleft:      $bottomleft;
+	-moz-border-radius-topleft:         $topleft;
+	border-top-right-radius:            $topright;
+	border-bottom-right-radius:         $bottomright;
+	border-bottom-left-radius:          $bottomleft;
+	border-top-left-radius:             $topleft;
+	-webkit-background-clip:            padding-box;
+	-moz-background-clip:               padding;
+	background-clip:                    padding-box;
+}
+
+
+/*********************
+TRANISTION
+*********************/
+
+/* @include transition(all,2s,ease-out); */
+@mixin css-transition($what: all, $time: 0.2s, $how: ease-in-out) {
+	-webkit-transition: $what $time $how;
+	-moz-transition:    $what $time $how;
+	-ms-transition:     $what $time $how;
+	-o-transition:      $what $time $how;
+	transition:         $what $time $how;
+}
+
+/*********************
+BOX SHADOWS
+*********************/
+
+/* @include box-shadow(5px, 5px, 10px, #000); */
+@mixin box-shadow($shadow-1,
+  $shadow-2: false, $shadow-3: false,
+  $shadow-4: false, $shadow-5: false,
+  $shadow-6: false, $shadow-7: false,
+  $shadow-8: false, $shadow-9: false) {
+  $full: compact($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9);
+
+  -webkit-box-shadow: $full;
+     -moz-box-shadow: $full;
+          box-shadow: $full;
 }
 
 /*********************
 CSS3 GRADIENTS
 Be careful with these since they can
-really slow down your CSS. Don't overdo it.
+really slow down your CSS. Don't overdue it.
 *********************/
 
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
@@ -217,7 +265,7 @@ BUTTONS
 	cursor: pointer;
 	margin-bottom: 20px;
 	line-height: 21px;
-	border-radius: 4px;
+	@include rounded(4px);
 	@include css-gradient($link-color, darken($link-color, 5%));
 
 
@@ -238,8 +286,9 @@ BUTTONS
 	border-color: darken($bones-blue, 10%);
 	text-shadow: 0 1px 1px darken($bones-blue, 10%);
 	@include css-gradient( $bones-blue, darken($bones-blue, 5%) );
-	box-shadow: inset 0 0 3px lighten($bones-blue, 16%);
-
+	-webkit-box-shadow: inset 0 0 3px lighten($bones-blue, 16%);
+       -moz-box-shadow: inset 0 0 3px lighten($bones-blue, 16%);
+   	        box-shadow: inset 0 0 3px lighten($bones-blue, 16%);
 	&:hover, &:focus {
 		border-color: darken($bones-blue, 15%);
 		@include css-gradient( darken($bones-blue, 4%), darken($bones-blue, 10%) );

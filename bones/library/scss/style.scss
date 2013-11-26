@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: 
+Author: 
 
 Stylesheet: Main Stylesheet
 
@@ -15,30 +15,30 @@ of the styles inside media queries.
 // IMPORTING STYLES
 //
 
-// import normalize
+// import normalize 
 @import "normalize";
 
-// import mixins
+// import mixins 
 @import "mixins";
 
 /*
-BASE (MOBILE) SIZE
-This are the mobile styles. It's what people see on their phones. If
-you set a great foundation, you won't need to add too many styles in
-the other stylesheets. Remember, keep it light: Speed is Important.
+BASE (MOBILE) SIZE 
+This is the average viewing window. So Desktops, Laptops, and 
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
 */
 
-// styles in base.scss
+// styles in base.scss 
 @import "base";
 
 /*
 LARGER MOBILE DEVICES
-This is for devices like the Galaxy Note or something that's
+This is for devices like the Galaxy Note or something that's 
 larger than an iPhone but smaller than a tablet. Let's call them
 tweeners.
 */
 @media only screen and (min-width: 481px) {
-
+	
 	// styles in 481up.scss
 	@import "481up";
 
@@ -46,39 +46,36 @@ tweeners.
 
 /*
 TABLET & SMALLER LAPTOPS
-This is the average viewing window. So Desktops, Laptops, and
+This is the average viewing window. So Desktops, Laptops, and 
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 */
 @media only screen and (min-width: 768px) {
-
-	// import grids
-	@import "grid";
-
+	
 	// styles in 768up.scss
 	@import "768up";
 
 } // end of media query
 
 /*
-DESKTOP
-This is the average viewing window. So Desktops, Laptops, and
+DESKTOP 
+This is the average viewing window. So Desktops, Laptops, and 
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 */
 @media only screen and (min-width: 1030px) {
-
-	// styles in 1030up.scss
+	
+	// styles in 1030up.scss 
 	@import "1030up";
 
 } // end of media query
 
 /*
-LARGE VIEWING SIZE
+LARGE VIEWING SIZE 
 This is for the larger monitors and possibly full screen viewers.
 */
 @media only screen and (min-width: 1240px) {
-
+	
 	// styles in 1240up.scss
 	@import "1240up";
 
@@ -86,28 +83,18 @@ This is for the larger monitors and possibly full screen viewers.
 
 /*
 RETINA (2x RESOLUTION DEVICES)
-This applies to the retina iPhone (4s) and iPad (2,3) along with
+This applies to the retina iPhone (4s) and iPad (2,3) along with 
 other displays with a 2x resolution. You can also create a media
 query for retina AND a certain size if you want. Go Nuts.
 */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min--moz-device-pixel-ratio: 1.5),
        only screen and (min-device-pixel-ratio: 1.5) {
-
+	
 	// styles in 2x.scss
-	@import "2x";
+	@import "2x"; 
 
-} // end of media query
-
-/*
-iPHONE 5 MEDIA QUERY
-Want to get fancy for no good reason? Knock yourself out.
-*/
-@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-  
-  // iPhone 5 or iPod Touch 5th generation styles (you can include your own file if you want)
-  
-}
+} // end of media query 
 
 /*
 PRINT STYLESHEET
@@ -115,6 +102,73 @@ Feel free to customize this. Remember to add things that won't make
 sense to print at the bottom. Things like nav, ads, and forms should
 be set to display none.
 */
-@media print {
-	@import "print";
+@media print { 
+	* { 
+		background: transparent !important; 
+		color: black !important; 
+		text-shadow: none !important; 
+		filter:none !important; 
+		-ms-filter: none !important; 
+	} 
+	
+	a, a:visited { 
+		color: #444 !important; 
+		text-decoration: underline; 
+		
+		// show links on printed pages
+		&:after { 
+			content: " (" attr(href) ")"; 
+		}
+		
+		// show title too
+		abbr[title]:after { 
+			content: " (" attr(title) ")"; 
+		}
+	} 
+	
+	.ir a:after, 
+	a[href^="javascript:"]:after, 
+	a[href^="#"]:after { 
+		content: ""; 
+	} 
+	
+	pre, blockquote { 
+		border: 1px solid #999; 
+		page-break-inside: avoid; 
+	} 
+	
+	thead { 
+		display: table-header-group; 
+	} 
+	
+	tr, img { 
+		page-break-inside: avoid; 
+	} 
+	
+	img { 
+		max-width: 100% !important; 
+	}
+    
+    @page { 
+    	margin: 0.5cm;
+    } 
+    
+    p, h2, h3 { 
+    	orphans: 3; 
+    	widows: 3; 
+    } 
+    
+    h2, 
+    h3 { 
+    	page-break-after: avoid; 
+    }
+    
+    // hide content people who print don't need to see
+    .sidebar,
+    .page-navigation, 
+    .wp-prev-next,
+    .respond-form,
+    nav {
+    	display: none;
+    }
 }
